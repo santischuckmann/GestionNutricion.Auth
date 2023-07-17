@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionNutricionAuth.Api", "GestionNutricionAuth.Api\GestionNutricionAuth.Api.csproj", "{4EF82D1A-7984-43BB-99C6-94D45B44B4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionNutricionAuth.Core", "GestionNutricionAuth.Core\GestionNutricionAuth.Core.csproj", "{30F24869-560B-4913-8D06-C417FEBF9C2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{581517D0-448B-4D1F-A208-85BAC06D4FF2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionNutricionAuth.Infraestructure", "GestionNutricionAuth.Infraestructure\GestionNutricionAuth.Infraestructure.csproj", "{1F3430DE-DD25-4A6D-8F4C-80DB0C24B081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EF82D1A-7984-43BB-99C6-94D45B44B4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF82D1A-7984-43BB-99C6-94D45B44B4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF82D1A-7984-43BB-99C6-94D45B44B4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF82D1A-7984-43BB-99C6-94D45B44B4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F24869-560B-4913-8D06-C417FEBF9C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F24869-560B-4913-8D06-C417FEBF9C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F24869-560B-4913-8D06-C417FEBF9C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F24869-560B-4913-8D06-C417FEBF9C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3430DE-DD25-4A6D-8F4C-80DB0C24B081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3430DE-DD25-4A6D-8F4C-80DB0C24B081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3430DE-DD25-4A6D-8F4C-80DB0C24B081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3430DE-DD25-4A6D-8F4C-80DB0C24B081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B117D59-C3FF-4FC8-A1E3-2B15A8493D4A}
+	EndGlobalSection
+EndGlobal
