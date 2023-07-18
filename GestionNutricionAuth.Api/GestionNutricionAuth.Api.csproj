@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GestionNutricionAuth.Core\GestionNutricionAuth.Core.csproj" />
+    <ProjectReference Include="..\GestionNutricionAuth.Infraestructure\GestionNutricionAuth.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

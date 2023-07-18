@@ -15,6 +15,7 @@ namespace GestionNutricionAuth.Core
     }
     public interface IUserRepository: IRepositorio<User>
     {
+        public Task<User> GetUserByUsername(string username);
     }
     public interface IRepositorio<T> where T : EntidadBase
     {

@@ -11,6 +11,7 @@ namespace GestionNutricionAuth.Core.Handlers
     {
         public Task CreateUser(User user);
         public Task UpdateUser(User user);
+        public Task<User> GetUserByUsername(string username);
     }
     public class UserHandler: IUserHandler
     {
@@ -31,6 +32,11 @@ namespace GestionNutricionAuth.Core.Handlers
         {
             _unitOfWork.UserRepository.Actualizar(user);
             await _unitOfWork.SaveAsync();
+        }
+
+        public async Task<User> GetUserByUsername(string username)
+        {
+            return await _unitOfWork.UserRepository.GetUserByUsername(username);
         }
     }
 }

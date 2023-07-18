@@ -8,10 +8,10 @@ namespace GestionNutricionAuth.Core.Entities
 {
     public class User : EntidadBase
     {
-        public string NombreUsuario { get; set; }
-        public string NombreCompleto { get; set; }
+        public string Username { get; set; }
+        public string FullName { get; set; }
         public string Email { get; set; }
-        public string Clave { get; set; }
+        public string Password { get; set; }
 
     }
 }
