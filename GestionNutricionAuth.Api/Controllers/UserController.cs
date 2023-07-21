@@ -1,7 +1,7 @@
 ﻿using GestionNutricionAuth.Infraestructure.Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace GestionNutricionAuth.Api.Controllers
 {
@@ -14,7 +14,9 @@ namespace GestionNutricionAuth.Api.Controllers
         { 
             _userService = userService;
         }
-        [HttpPost]
+        [HttpPost("Login", Name = nameof(Login))]
+        [ProducesResponseType((int)HttpStatusCode.Created, Type = typeof(UserTokenDto))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
         {
             var response = await _userService.Login(userLoginDto);
@@ -22,12 +24,21 @@ namespace GestionNutricionAuth.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [HttpPost("Register", Name = nameof(Register))]
+        [ProducesResponseType((int)HttpStatusCode.Created, Type = typeof(bool))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Register(UserDtoCreation userDtoCreation)
         {
             var response = await _userService.Register(userDtoCreation);
 
             return Ok(response);
+        }
+
+        [Authorize]
+        [HttpGet("Check", Name = "Check")]
+        public IActionResult Check()
+        {
+            return Ok("Autorizado");
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using GestionNutricionAuth.Core;
 using GestionNutricionAuth.Core.Entities;
+using GestionNutricionAuth.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace GestionNutricionAuth.Api.Repositories
+namespace GestionNutricionAuth.Infraestructure.Repositories
 {
     public class UserRepository: RepositorioBase<User>, IUserRepository
     {

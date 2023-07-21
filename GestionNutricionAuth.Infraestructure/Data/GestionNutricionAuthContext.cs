@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace GestionNutricionAuth.Api
+namespace GestionNutricionAuth.Infraestructure.Data
 {
-    public class GestionNutricionAuthContext: DbContext
+    public class GestionNutricionAuthContext : DbContext
     {
         public GestionNutricionAuthContext() { }
-        public GestionNutricionAuthContext(DbContextOptions<GestionNutricionAuthContext> options): base(options) { }
+        public GestionNutricionAuthContext(DbContextOptions<GestionNutricionAuthContext> options) : base(options) { }
 
         public virtual DbSet<User> Users { get; set; }
 

@@ -1,7 +1,8 @@
 ﻿using GestionNutricionAuth.Core;
+using GestionNutricionAuth.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace GestionNutricionAuth.Api.Repositories
+namespace GestionNutricionAuth.Infraestructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
