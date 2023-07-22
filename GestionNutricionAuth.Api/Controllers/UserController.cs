@@ -5,6 +5,7 @@ using System.Net;
 
 namespace GestionNutricionAuth.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -14,6 +15,8 @@ namespace GestionNutricionAuth.Api.Controllers
         { 
             _userService = userService;
         }
+
+        [AllowAnonymous]
         [HttpPost("Login", Name = nameof(Login))]
         [ProducesResponseType((int)HttpStatusCode.Created, Type = typeof(UserTokenDto))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -24,6 +27,7 @@ namespace GestionNutricionAuth.Api.Controllers
             return Ok(response);
         }
 
+        [AllowAnonymous]
         [HttpPost("Register", Name = nameof(Register))]
         [ProducesResponseType((int)HttpStatusCode.Created, Type = typeof(bool))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -34,7 +38,6 @@ namespace GestionNutricionAuth.Api.Controllers
             return Ok(response);
         }
 
-        [Authorize]
         [HttpGet("Check", Name = "Check")]
         public IActionResult Check()
         {
