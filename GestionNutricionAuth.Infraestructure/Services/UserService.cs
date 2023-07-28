@@ -58,6 +58,10 @@ namespace GestionNutricionAuth.Infraestructure.Services
 
         public async Task<UserTokenDto> Login(UserLoginDto userLoginDto)
         {
+            if (userLoginDto.Username == null || userLoginDto.Password == null) {
+                throw new Exception("Ingrese las credenciales completas");
+            }
+
             User user = await _userHandler.GetUserByUsername(userLoginDto.Username);
             
             if (user == null) throw new Exception("El usuario no se encuentra en el sistema");
@@ -87,7 +91,7 @@ namespace GestionNutricionAuth.Infraestructure.Services
             {
                 Password = Hash(userDto.Password),
                 Email = userDto.Email,
-                FullName = userDto.Username,
+                FullName = userDto.FullName,
                 Username = userDto.Username
             };
 

@@ -9,6 +9,19 @@ ConfigurationManager Configuration = builder.Configuration;
 
 // Add services to the container.
 
+var _policyName = "configuracionCors";
+
+builder.Services.AddCors(x =>
+{
+    x.AddPolicy(_policyName, builder =>
+    {
+        builder.WithOrigins(Configuration["AllowedHosts"])
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .SetPreflightMaxAge(TimeSpan.FromDays(365));
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContexts(Configuration);
 builder.Services.AddServices();
@@ -59,6 +72,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(_policyName);
 
 app.UseHttpsRedirection();
 
