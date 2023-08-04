@@ -70,6 +70,7 @@ namespace GestionNutricionAuth.Infraestructure.Services
 
             UserDto userDto = new UserDto()
             {
+                Id = user.Id,
                 Password = user.Password,
                 Email = user.Email,
                 FullName = user.Username,
@@ -112,10 +113,11 @@ namespace GestionNutricionAuth.Infraestructure.Services
 
             var claims = new List<Claim>
             {
+                new Claim("user_id", userDto.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.UniqueName, userDto.Username),
                 new Claim(JwtRegisteredClaimNames.GivenName, userDto.FullName),
                 new Claim(JwtRegisteredClaimNames.Email, userDto.Email),
-                new Claim(ClaimTypes.Role, "Administrador"),
+                new Claim(ClaimTypes.Role, "Administrador")
             };
 
             var expiration = DateTime.UtcNow.AddDays(3);
